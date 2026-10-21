@@ -21,15 +21,15 @@
 
             <ul class="navbar-links">
                 <li>
-                    <a href="index.php" class="active">Home</a>
+                    <a href="index.php" class="active">Bog Feed</a>
                 </li>
 
                 <li>
-                    <a href="createPost.php">Create</a>
+                    <a href="createPost.php">Bog Submission</a>
                 </li>
 
                 <li>
-                    <a href="profile.php">Profile</a>
+                    <a href="profile.php">Your Bog</a>
                 </li>
             </ul>
 
@@ -48,14 +48,14 @@
 
                 <a href="logout.php" class="btn btn-accent">
                     <span class="login-icon">⇥</span>
-                    <span class="login-text">Logout</span>
+                    <span class="login-text">Bog-Out</span>
                 </a>
 
             <?php else: ?>
 
                 <a href="login.php" class="btn btn-accent">
                     <span class="login-icon">⇥</span>
-                    <span class="login-text">Login</span>
+                    <span class="login-text">Bog-In</span>
                 </a>
 
             <?php endif; ?>

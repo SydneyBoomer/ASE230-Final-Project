@@ -12,38 +12,38 @@
 
     --logo-size: 42px;
 
-    /* Main colors */
-    --color-primary: #273469;
-    --color-primary-dark: #1d274f;
-    --color-primary-light: #e8ebf7;
+    /* Main colors: forest green with lavender backgrounds */
+    --color-primary: #60865A;
+    --color-primary-dark: #4D7048;
+    --color-primary-light: #F2D5FA;
 
-    /* Accent colors */
-    --color-accent: #e07a5f;
-    --color-accent-dark: #c85f46;
-    --color-accent-light: #f8ddd5;
+    /* Accent colors: bright green for key actions */
+    --color-accent: #25B52B;
+    --color-accent-dark: #1E9824;
+    --color-accent-light: #B0D0A4;
 
-    /* Secondary accent */
-    --color-secondary: #7b4f79;
-    --color-secondary-light: #eee3ed;
+    /* Secondary accent: muted purple for panels */
+    --color-secondary: #8B6F91;
+    --color-secondary-light: #E9D8EE;
 
     /* Backgrounds */
-    --color-background: #f7f3ed;
-    --color-surface: #ffffff;
-    --color-surface-alt: #eee9e1;
+    --color-background: #FBF8F3;
+    --color-surface: #FAF7F2;
+    --color-surface-alt: #B0D0A4;
 
     /* Text */
-    --color-text: #252525;
-    --color-text-light: #6d6d6d;
-    --color-text-inverse: #ffffff;
+    --color-text: #29252B;
+    --color-text-light: #625B64;
+    --color-text-inverse: #FAF7F2;
 
     /* Borders */
-    --color-border: #ddd7ce;
-    --color-border-light: #ebe6df;
+    --color-border: #B99ABD;
+    --color-border-light: #D8BEDD;
 
     /* Status */
-    --color-success: #4f8a6d;
-    --color-warning: #d19a3a;
-    --color-danger: #c95454;
+    --color-success: #4D7048;
+    --color-warning: #8B6F45;
+    --color-danger: #B44343;
 
     /* Shadows */
     --shadow-small: 0 2px 8px rgba(0, 0, 0, 0.06);
@@ -77,27 +77,27 @@
 
 .dark-mode {
 
-    --color-primary: #aeb9ff;
-    --color-primary-dark: #8f9cf0;
-    --color-primary-light: #252b4a;
+    --color-primary: #B0D0A4;
+    --color-primary-dark: #C7E0BD;
+    --color-primary-light: #49364D;
 
-    --color-accent: #f28b70;
-    --color-accent-dark: #e87559;
-    --color-accent-light: #482d28;
+    --color-accent: #35C83B;
+    --color-accent-dark: #25B52B;
+    --color-accent-light: #344A31;
 
-    --color-secondary: #c39bc1;
-    --color-secondary-light: #392f38;
+    --color-secondary: #C3A3C9;
+    --color-secondary-light: #3D3041;
 
-    --color-background: #17181f;
-    --color-surface: #22232b;
-    --color-surface-alt: #2b2c35;
+    --color-background: #211D23;
+    --color-surface: #2D282F;
+    --color-surface-alt: #3B4938;
 
-    --color-text: #f1f1f1;
-    --color-text-light: #b3b3b3;
-    --color-text-inverse: #17181f;
+    --color-text: #F8F2F8;
+    --color-text-light: #C9BEC9;
+    --color-text-inverse: #211D23;
 
-    --color-border: #3a3b45;
-    --color-border-light: #30313a;
+    --color-border: #514653;
+    --color-border-light: #413843;
 
     --shadow-small: 0 2px 8px rgba(0, 0, 0, 0.25);
     --shadow-medium: 0 5px 20px rgba(0, 0, 0, 0.35);
@@ -644,7 +644,7 @@ main {
    RESPONSIVE DESIGN
    ========================================================= */
 
-@media (max-width: 705px) {
+@media (max-width: 810px) {
 
     .navbar {
         width: calc(100% - 20px);
@@ -724,4 +724,155 @@ main {
     .login-icon {
         font-size: 1.1rem;
     }
+}
+
+/* =========================================================
+   MOCKUP COLOR ALIGNMENT
+   Shared component colors follow the Bogr page mockups.
+   ========================================================= */
+
+.navbar {
+    background: var(--color-surface-alt);
+}
+
+.navbar-links a:hover {
+    color: var(--color-text);
+    background: var(--color-primary-light);
+}
+
+.navbar-links a.active {
+    color: var(--color-text);
+    background: rgba(255, 255, 255, 0.28);
+}
+
+.navbar-logo-text {
+    color: var(--color-secondary);
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: #FAF7F2;
+}
+
+.btn-primary:hover {
+    background: var(--color-primary-dark);
+}
+
+.btn-accent {
+    background: var(--color-accent-light);
+    color: var(--color-text);
+}
+
+.btn-accent:hover {
+    background: var(--color-accent);
+    color: #FAF7F2;
+}
+
+.btn-secondary {
+    background: var(--color-secondary);
+    color: #FAF7F2;
+}
+
+.card,
+.post {
+    background: var(--color-primary-light);
+}
+
+.post-header,
+.post-actions {
+    border-color: var(--color-border);
+}
+
+.post-action:hover {
+    color: var(--color-text);
+    background: var(--color-accent-light);
+}
+
+.tag {
+    background: var(--color-accent-light);
+    color: var(--color-text);
+}
+
+/* Optional authentication-page layout.
+   Add these classes to the login/signup page markup if needed. */
+.auth-page {
+    min-height: calc(100vh - var(--navbar-height));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px;
+    background: var(--color-background);
+}
+
+.auth-panel {
+    width: min(100%, 470px);
+    padding: 32px 28px;
+    background: var(--color-secondary);
+    color: #FAF7F2;
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-medium);
+}
+
+.auth-panel h1,
+.auth-panel h2,
+.auth-panel p,
+.auth-panel .form-label {
+    color: #FAF7F2;
+}
+
+.auth-panel .form-input,
+.auth-panel .form-select,
+.auth-panel .form-textarea {
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid transparent;
+    border-radius: 999px;
+}
+
+.auth-panel .btn-primary {
+    background: var(--color-primary);
+    color: #FAF7F2;
+}
+
+.auth-panel .btn-primary:hover {
+    background: var(--color-primary-dark);
+}
+
+@media (max-width: 705px) {
+    .auth-panel {
+        padding: 26px 20px;
+    }
+}
+
+
+/* =========================================================
+   DARK MODE NAVBAR BUTTONS
+   Keep actions neutral until hover, matching the page links.
+   ========================================================= */
+
+.dark-mode .navbar-actions #theme-toggle,
+.dark-mode .navbar-actions button,
+.dark-mode .navbar-actions .btn,
+.dark-mode .navbar-actions a {
+    background: transparent;
+    color: var(--color-text-light);
+    border: 1px solid transparent;
+    box-shadow: none;
+}
+
+.dark-mode .navbar-actions #theme-toggle:hover,
+.dark-mode .navbar-actions button:hover,
+.dark-mode .navbar-actions .btn:hover,
+.dark-mode .navbar-actions a:hover {
+    background: #49364D;
+    color: #FFFFFF;
+    border-color: #8B6F91;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.24);
+}
+
+.dark-mode .navbar-actions #theme-toggle:focus-visible,
+.dark-mode .navbar-actions button:focus-visible,
+.dark-mode .navbar-actions a:focus-visible {
+    outline: 3px solid #FAF7F2;
+    outline-offset: 3px;
 }
