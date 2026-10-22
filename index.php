@@ -1,3 +1,19 @@
+<?php
+
+if(!isset($_SESSION["is_logged_in"])) {
+    $_SESSION["is_logged_in"] = false;
+} else {
+    $_SESSION["is_logged_in"] = true;
+}
+
+
+if (isset($_SESSION['is_logged_in']) && $_SESSION['is_logged_in'] === true) {
+    // if logged in, redirect to their feed
+    header("Location: feed.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

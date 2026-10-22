@@ -21,7 +21,7 @@
 
             <ul class="navbar-links">
                 <li>
-                    <a href="index.php" class="active">Bog Feed</a>
+                    <a href="feed.php" class="active">Bog Feed</a>
                 </li>
 
                 <li>
