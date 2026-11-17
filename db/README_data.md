@@ -1,6 +1,5 @@
-# Bogr Data Files
+# Bogr Database Setup
 
-This folder stores Bogr's persistent data in JSON files. JSON does not support comments, so this README explains what each file is for and what fields its records should contain.
 
 ## `users.json`
 
@@ -11,7 +10,7 @@ Stores account information and login credentials.
 | `user_id` | Unique identifier for the user. |
 | `username` | User's chosen username. |
 | `email` | User's email address. |
-| `password_hash` | Password hash created by PHP's `password_hash()`. Never store plain-text passwords. |
+| `password_hash` | Password hash created by PHP's `password_hash()` |
 | `created_at` | Date and time the account was created. |
 
 ## `friendships.json`
@@ -78,14 +77,3 @@ Stores the example posts for users who aren't logged in.
 | `content` | Text content of the post. |
 | `image_path` | Relative path to an uploaded image, if there is one. |
 | `created_at` | Date and time the post was created. |
-
-## JSON file guidelines
-
-- Each data file should contain a valid JSON array, even when it has no records. An empty file should contain `[]`, not be completely blank.
-- Use matching IDs to connect records across files. For example, `posts.json` uses `user_id` to identify the author in `users.json`.
-- Generate unique IDs when creating records, and check existing records to avoid duplicates.
-- Validate user input before saving it.
-- Use PHP's `password_hash()` and `password_verify()` for passwords.
-- When writing JSON from PHP, use `json_encode()` and check that reading or writing the file succeeded.
-- Because JSON files do not handle simultaneous writes like a database, use file locking when updating them to reduce the risk of overwriting another request's changes.
-- Do not store uploaded image data directly in these JSON files. Store the image file separately and save its relative path in `image_path`.
